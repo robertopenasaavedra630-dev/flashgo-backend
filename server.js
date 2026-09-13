@@ -51,9 +51,6 @@ app.post('/api/viajes/calcular-precio', async (req, res) => {
         res.status(500).json({ error: 'Error en el servidor al calcular precio' });
     }
 });
+const serverless = require('serverless-http');
+module.exports.handler = serverless(app);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor FlashGo corriendo en el puerto ${PORT}`);
-});
-             
